@@ -4,6 +4,12 @@ app.use(express.json());
 
 const cors = require("cors");
 app.use(cors());
+app.use(cors({
+  origin: "https://food-dash-delivery.vercel.app/",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"]
+}));
 
 const authRoutes = require("./routes/authRoutes");
 const connectDB = require("./config/db");
