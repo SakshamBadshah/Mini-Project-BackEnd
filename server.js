@@ -13,8 +13,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
-
 const authRoutes = require("./routes/authRoutes");
 const connectDB = require("./config/db");
 require("dotenv").config();
