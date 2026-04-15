@@ -3,7 +3,9 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 const cors = require("cors");
-app.use(cors());
+app.use(cors({
+  origin: "https://food-dash-delivery.vercel.app",
+}));
 const authRoutes = require("./routes/authRoutes");
 const connectDB = require("./config/db");
 require("dotenv").config();
