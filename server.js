@@ -3,12 +3,17 @@ const app = express();
 app.use(express.json());
 
 const cors = require("cors");
-app.use(cors({
-  origin: "https://dash-delivery.vercel.app",
+
+const corsOptions = {
+  origin: [
+    "https://dash-delivery.vercel.app",
+    "http://localhost:5173"
+  ],
   credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 const authRoutes = require("./routes/authRoutes");
 const connectDB = require("./config/db");
