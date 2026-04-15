@@ -27,7 +27,7 @@ app.use("/api/addresses", addressRoutes);
 
 app.use("/api/cart", require("./routes/cartRoutes"));
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
