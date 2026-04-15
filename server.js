@@ -8,7 +8,6 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
-app.options("*", cors());
 
 const authRoutes = require("./routes/authRoutes");
 const connectDB = require("./config/db");
