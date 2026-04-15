@@ -20,7 +20,11 @@ exports.registerUser = async (req, res) => {
   res.json({
     _id: user._id,
     token: generateToken(user._id),
-    user: { name: user.name, email: user.email } 
+    user: {
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+    }
   });
 };
 
