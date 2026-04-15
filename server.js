@@ -3,12 +3,11 @@ const app = express();
 app.use(express.json());
 
 const cors = require("cors");
-app.use(cors());
 app.use(cors({
-  origin: "https://food-dash-delivery.vercel.app/",
+  origin: "https://food-dash-delivery.vercel.app", // NO SLASH AT THE END
   credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type"]
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 const authRoutes = require("./routes/authRoutes");
