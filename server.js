@@ -4,7 +4,7 @@ app.use(express.json());
 
 const cors = require("cors");
 app.use(cors({
-  origin: "https://food-dash-delivery.vercel.app", // NO SLASH AT THE END
+  origin: "https://dash-delivery.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
